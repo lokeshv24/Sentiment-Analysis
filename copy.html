@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(49,58,121,0.33665966386554624) 35%, rgba(0,212,255,1) 100%); 
+            background-size: cover; /* Optional: Cover the entire page */
+            background-repeat: no-repeat; /* Optional: No image repetition */
+            background-attachment: fixed; /* Optional: Keep the image fixed in the viewport */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Optional: Add a semi-transparent white background to the content container */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2672a4;
+        }
+        .topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 18px 20px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: rgba(220, 10, 10, 0.701);
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #3e218c;
+  color: white;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+  padding: 15px; /* Adjust the padding as needed to increase the size */
+        width: 300px
+}
+
+    
+    </style>
+</head>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+    <style>
+        /* Your existing CSS styles */
+        /* ... */
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+    <style>
+        /* Your existing CSS styles */
+        /* ... */
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <div class="topnav-right">
+            <form action="/search">
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <center>
+        <div class="container">
+            <h1>Sentiment Analysis</h1>
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="audio" accept=".wav" required>
+                <br>
+                <!-- Display and play the uploaded audio with controls -->
+                <audio id="uploadedAudio" controls>
+                    <source src="" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                <div style="text-align: center;">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </center>
+
+    <script>
+        // Get the input element
+        const audioInput = document.querySelector('input[type="file"][name="audio"]');
+        
+        // Get the audio element
+        const audioElement = document.getElementById('uploadedAudio');
+        
+        // Add an event listener to update the audio source when a file is selected
+        audioInput.addEventListener('change', function(event) {
+            const selectedFile = event.target.files[0];
+            if (selectedFile) {
+                const objectURL = URL.createObjectURL(selectedFile);
+                audioElement.src = objectURL;
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(49,58,121,0.33665966386554624) 35%, rgba(0,212,255,1) 100%); 
+    background-size: cover; /* Optional: Cover the entire page */
+    background-repeat: no-repeat; /* Optional: No image repetition */
+    background-attachment: fixed; /* Optional: Keep the image fixed in the viewport */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+}
+
+.pe{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+p {
+    font-size: 24px;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+    font-size: 20px; /* Slightly smaller font size */
+}
+
+a:hover {
+    color: #2672a4;
+}
+
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    padding: 0; /* Adjusted padding to match the link size */
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f0f0f05a;
+    text-align: center;
+    padding: 8px 12px; /* Adjusted padding to match the link size */
+    text-decoration: none;
+    font-size: 20px; /* Slightly smaller font size */
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #12111197;
+    color: rgba(220, 10, 10, 0.701);
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #3e218c;
+    color: white;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+    float: right;
+    padding: 15px; /* Adjusted padding as needed to match the link size */
+    width: 300px;
+}
+
+ for animation
+img {
+    animation: fadeIn 5s infinite;
+}
+
+@keyframes fadeIn {
+from {
+    opacity: 0;
+}
+to {
+    opacity: 1;
+}
+}
+
+.container {
+/* ... your existing styles ... */
+opacity: 0; /* Initially set the opacity to 0 to make it invisible */
+animation: fadeIn 3s ease-in-out; 
+}
+
+
+
+
+img {
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

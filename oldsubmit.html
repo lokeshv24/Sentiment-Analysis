@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Prediction Result</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(49,58,121,0.33665966386554624) 35%, rgba(0,212,255,1) 100%); 
+            background-size: cover; /* Optional: Cover the entire page */
+            background-repeat: no-repeat; /* Optional: No image repetition */
+            background-attachment: fixed; /* Optional: Keep the image fixed in the viewport */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Optional: Add a semi-transparent white background to the content container */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px;
+    
+}
+
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2672a4;
+        }
+        .topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 18px 20px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: rgba(220, 10, 10, 0.701);
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #3e218c;
+  color: white;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+  padding: 15px; /* Adjust the padding as needed to increase the size */
+        width: 300px
+}
+.pe{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+    </style>
+</head>
+<body>
+    
+    <br><br><br><br><br><br>
+    <h1>Sentiment Analysed</h1>
+    <br>
+    <div class="pe">
+        <p>Predicted Emotion: {{ result }}</p>
+    </div>
+    <a href="/">Back to Home</a>
+</body>
+</html>

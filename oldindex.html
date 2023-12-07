@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CallMood Monitor</title>
+    <style>
+  
+
+        center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2672a4;
+        }
+
+
+
+        
+    </style>
+</head>
+
+<body>
+
+    <div id="main-action-toggler">
+        <center>
+            <div class="container">
+                <h1>Sentiment Analysis</h1>
+                <form method="POST" enctype="multipart/form-data">
+                    <input type="file" name="audio" accept=".wav" required>
+                    <br>
+                    <!-- Display and play the uploaded audio with controls -->
+                    <audio id="uploadedAudio" controls>
+                        <source src="" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div style="text-align: center;">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </center>
+    </div>
+    <script>
+        // Get the input element
+        const audioInput = document.querySelector('input[type="file"][name="audio"]');
+
+        // Get the audio element
+        const audioElement = document.getElementById('uploadedAudio');
+
+        // Add an event listener to update the audio source when a file is selected
+        audioInput.addEventListener('change', function (event) {
+            const selectedFile = event.target.files[0];
+            if (selectedFile) {
+                const objectURL = URL.createObjectURL(selectedFile);
+                audioElement.src = objectURL;
+            }
+        });
+
+        // main-action-toggler for navigation
+        const tryNowBtn = document.getElementById('try-now-button');
+        tryNowBtn.addEventListener('click', () => {
+            document.getElementById('main-action-toggler').scrollIntoView({ behavior: "smooth" });
+        });
+
+        window.addEventListener('load', function () {
+            const description = document.querySelector('.description');
+            description.classList.add('active');
+        });
+        window.addEventListener('load', function () {
+            const description = document.querySelector('.description');
+            description.classList.add('active');
+        });
+
+
+
+    </script>
+</body>
+
+</html>
